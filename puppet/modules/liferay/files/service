@@ -1,0 +1,36 @@
+#!/bin/sh
+# chkconfig: 235 99 10
+# description: Start or stop the liferay server
+#
+### BEGIN INIT INFO
+# Provides: liferay
+# Required-Start: $network $syslog
+# Required-Stop: $network
+# Default-Start: 2 3 5
+# Default-Stop: 0 1 6
+# Description: Start or stop the liferay server
+### END INIT INFO
+
+# Author: Linton Galloway <mail@linton.me>
+#
+
+case "$1" in
+start)
+	echo "Starting liferay server"
+	su - liferay -c "/opt/liferay/tomcat-6.0.29/bin/startup.sh"
+	;;
+stop)
+	echo "Stopping liferay server"
+	su - liferay -c "/opt/liferay/tomcat-6.0.29/bin/shutdown.sh"
+	;;
+restart)
+	$0 stop ; $0 start
+	RETVAL=$?
+	;;
+*)
+	echo "Usage: $0 { start | stop | restart }"
+	RETVAL=1
+	;;
+esac
+exit $RETVAL
+

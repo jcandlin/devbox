@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>  
+    <feature name="demo-cxf-jaxrs" version="4.4.1-fuse-01-13" resolver="(obr)">
+        <feature version="4.4.1-fuse-01-13">cxf-jaxrs</feature>
+        <bundle dependency="true">mvn:org.springframework/spring-beans/3.0.5.RELEASE</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_5</bundle>
+        <!--bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs/4.4.1-fuse-01-13</bundle-->
+    </feature>
+</features>

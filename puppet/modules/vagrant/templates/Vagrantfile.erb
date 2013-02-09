@@ -1,0 +1,26 @@
+Vagrant::Config.run do |config|
+
+	<% nodes.each_pair do |key, value_hash| %>
+	
+	config.vm.define :<%= key %> do |<%= key %>_config|
+	
+		<%= key %>_config.vm.box = "ubuntu-11.10-server-i386"
+		<%= key %>_config.vm.network "<%= value_hash['network'] %>"
+		<%= key %>_config.vm.host_name = "<%= key %>"
+	
+		<%= key %>_config.vm.customize do |vm|
+			vm.name = "<%= key %>"
+		end
+	
+		<%= key %>_config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
+			puppet.manifests_path = "puppet/manifests"
+			puppet.manifest_file = "site.pp"
+		end
+	
+	end	
+	<% end %>
+
+	
+	
+	
+end
