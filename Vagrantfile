@@ -81,14 +81,4 @@ Vagrant::Config.run do |config|
 		end
 	end
 	
-		config.vm.define :vm do |vm_config|
-		vm_config.vm.box = "Precise32"
-		vm_config.vm.box_url = "http://files.vagrantup.com/precise32.box"
-		vm_config.vm.host_name = "vm"
-		vm_config.vm.network :hostonly, "192.168.50.9"
-		vm_config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
-			puppet.manifests_path = "puppet/manifests"
-			puppet.manifest_file = "site.pp"
-		end
-	end
 end
