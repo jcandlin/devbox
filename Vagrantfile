@@ -3,12 +3,12 @@
 
 Vagrant::Config.run do |config|
 
-	config.vm.define :master do |master_config|
-		master_config.vm.box = "Precise32"
-		master_config.vm.box_url = "http://files.vagrantup.com/precise32.box"
-		master_config.vm.host_name = "master"
-#		master_config.vm.network :hostonly, "192.168.50.2"
-		master_config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
+	config.vm.define :dev-master do |dev-master_config|
+		dev-master_config.vm.box = "Precise32"
+		dev-master_config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+		dev-master_config.vm.host_name = "dev-master"
+#		dev-master_config.vm.network :hostonly, "192.168.50.2"
+		dev-master_config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
 			puppet.manifests_path = "puppet/manifests"
 			puppet.manifest_file = "site.pp"
 		end
