@@ -1,5 +1,5 @@
 # host' nodes  ################################################################
-node 'master' {
+node 'dev-master' {
 
 	include servicemix::host
 	include liferay::host
