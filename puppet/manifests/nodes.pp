@@ -10,14 +10,14 @@ node 'master' {
 		"devbox" :
 			nodes => {
   				# example build cluster
-  				build     => { 'hostname' => 'build.local',       'network' => '192.168.1.101' },
-  				artefacts => { 'hostname' => 'artefacts.local',   'network' => '192.168.1.102' },
-  				source    => { 'hostname' => 'source.local',      'network' => '192.168.1.103' },
+  				build     => { 'hostname' => 'build.local',       'network' => '192.168.56.101' },
+  				artefacts => { 'hostname' => 'artefacts.local',   'network' => '192.168.56.102' },
+  				source    => { 'hostname' => 'source.local',      'network' => '192.168.56.103' },
   				
   				# example application
-  				database  => { 'hostname' => 'database.local',    'network' => '192.168.1.111' },
-  				service   => { 'hostname' => 'service.local',     'network' => '192.168.1.112' },
-  				client    => { 'hostname' => 'client.local',     'network' => '192.168.1.113' },
+  				database  => { 'hostname' => 'database.local',    'network' => '192.168.56.111' },
+  				service   => { 'hostname' => 'service.local',     'network' => '192.168.56.112' },
+  				client    => { 'hostname' => 'client.local',     'network' => '192.168.56.113' },
 			}
 	}
 	
